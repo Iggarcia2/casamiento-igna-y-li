@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ignacio y Lilén — ¡Nos Casamos! · 20.03.2027</title>
+    <meta
+      name="description"
+      content="¡Nos casamos! Te invitamos a celebrar con nosotros el 20 de marzo de 2027 en Río Cuarto, Córdoba."
+    />
+    <meta property="og:title" content="Ignacio y Lilén — ¡Nos Casamos!" />
+    <meta
+      property="og:description"
+      content="20 de marzo de 2027 · Río Cuarto, Córdoba. Confirmá tu presencia."
+    />
+    <meta property="og:image" content="assets/foto-portada.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#c3d4bf" />
+
+    <!-- Google Fonts: Cormorant Garamond (serif), Great Vibes (script), Montserrat (UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="invitation-shell">
+      <!-- ==================== 1. PORTADA / HERO ==================== -->
+      <header class="hero" id="inicio">
+        <img
+          id="hero-img"
+          src="assets/foto-portada.jpg"
+          alt="Ignacio y Lilén"
+          class="hero__bg"
+        />
+        <div class="hero__scrim"></div>
+
+        <div class="hero__top">
+          <h1 class="hero__title">¡NOS CASAMOS!</h1>
+          <p class="hero__names" id="hero-names">Ignacio &amp; Lilén</p>
+        </div>
+
+        <div class="hero__bottom">
+          <p class="hero__date" id="hero-date">20.03.2027</p>
+
+          <button
+            type="button"
+            class="music-trigger"
+            id="music-toggle"
+            aria-label="Reproducir o pausar música"
+            aria-pressed="false"
+          >
+            <span class="music-trigger__circle" aria-hidden="true">
+              <!-- Play icon -->
+              <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8.5 6.5v11l9-5.5-9-5.5z" />
+              </svg>
+              <!-- Pause icon -->
+              <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7.5 6.5h3v11h-3v-11zm6 0h3v11h-3v-11z" />
+              </svg>
+            </span>
+            <span class="music-trigger__label" id="music-label">DALE PLAY!</span>
+          </button>
+          <audio id="bg-audio" preload="none" loop></audio>
+        </div>
+      </header>
+
+      <!-- ==================== 2. FRASE + CUENTA REGRESIVA ==================== -->
+      <section class="section section--sage countdown-section reveal" id="cuenta-regresiva">
+        <p class="welcome-quote" id="welcome-quote">
+          Dicen que la felicidad es aún más grande cuando se comparte... Por eso
+          queremos que seas parte de nuestro gran día.
+        </p>
+
+        <div class="countdown-wrapper">
+          <h2 class="script-title countdown-title">Faltan</h2>
+
+          <div class="countdown" id="countdown" role="timer" aria-live="off">
+            <div class="countdown__unit">
+              <span class="countdown__num" id="cd-days">00</span>
+              <span class="countdown__label">DÍAS</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__unit">
+              <span class="countdown__num" id="cd-hours">00</span>
+              <span class="countdown__label">HORAS</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__unit">
+              <span class="countdown__num" id="cd-minutes">00</span>
+              <span class="countdown__label">MINUTOS</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__unit">
+              <span class="countdown__num" id="cd-seconds">00</span>
+              <span class="countdown__label">SEGUNDOS</span>
+            </div>
+          </div>
+
+          <img
+            src="assets/eucalipto.jpg"
+            alt=""
+            class="botanical-sprig botanical-sprig--countdown"
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+
+      <!-- ==================== 3. CEREMONIA Y FIESTA ==================== -->
+      <section class="section section--paper events-section reveal" id="eventos">
+        <div id="events-container" class="events-list"></div>
+
+        <div class="calendar-action">
+          <button type="button" class="btn btn--outline" id="btn-calendar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M16 3v4M8 3v4M3 10h18" />
+            </svg>
+            AGENDAR FECHA
+          </button>
+        </div>
+      </section>
+
+      <!-- ==================== 4. CONFIRMACIÓN + REGALO / ALIAS ==================== -->
+      <section class="section section--sage rsvp-section reveal" id="confirmar">
+        <!-- Ornamento corazón dorado -->
+        <svg class="gold-heart-ornament" viewBox="0 0 200 44" fill="none" aria-hidden="true">
+          <path
+            d="M12 26 C42 26, 62 31, 86 24 C95 21, 97 13, 100 17 C103 13, 105 21, 114 24 C138 31, 158 26, 188 26"
+            stroke="#c6a95d"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M100 28 C100 28, 86 19, 86 11.5 C86 7.5, 89.2 4.5, 93 4.5 C96.2 4.5, 98.8 6.5, 100 9.2 C101.2 6.5, 103.8 4.5, 107 4.5 C110.8 4.5, 114 7.5, 114 11.5 C114 19, 100 28, 100 28 Z"
+            stroke="#c6a95d"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        <h2 class="serif-heading serif-heading--light">CONFIRMÁ TU PRESENCIA</h2>
+        <p class="rsvp-text" id="rsvp-deadline">
+          Nos encantaría contar con tu presencia. Por favor, confirmá tu
+          asistencia antes del 20 de Febrero de 2027.
+        </p>
+
+        <button type="button" class="btn btn--sage-pill" id="btn-open-rsvp">
+          Confirmar
+        </button>
+
+        <div class="soft-divider" aria-hidden="true"></div>
+
+        <h3 class="serif-subheading serif-subheading--light">REGALOS</h3>
+        <p class="rsvp-text rsvp-text--compact" id="gift-subtitle">
+          Tu presencia es nuestro mejor regalo. Si además deseás hacernos un
+          presente, te dejamos nuestros datos:
+        </p>
+
+        <button type="button" class="btn btn--sage-pill" id="btn-open-gift">
+          Ver datos
+        </button>
+      </section>
+
+      <!-- ==================== 5. DRESS CODE + COLORES RESERVADOS ==================== -->
+      <section class="section section--sage dresscode-section reveal" id="dress-code">
+        <h2 class="serif-heading serif-heading--light dresscode-headline" id="dresscode-headline">
+          HAGAMOS JUNTOS UNA FIESTA INOLVIDABLE
+        </h2>
+
+        <!-- Tarjeta estilo nota con chinche -->
+        <div class="dresscode-card">
+          <span class="pushpin" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <circle cx="19" cy="11" r="7.5" fill="#7c9a7b" />
+              <ellipse cx="16.5" cy="9" rx="2.5" ry="1.5" fill="#a7c0a5" transform="rotate(-25 16.5 9)" />
+              <path d="M16 17 L13 29 L19 19" fill="#5c795b" />
+            </svg>
+          </span>
+
+          <h3 class="script-title dresscode-card__title">Dress Code</h3>
+
+          <!-- Ilustración minimalista vestido + traje en verde salvia -->
+          <div class="dresscode-illustration" aria-hidden="true">
+            <svg viewBox="0 0 180 120" fill="none">
+              <!-- Vestido de gala -->
+              <path
+                d="M49 20 C49 20, 44 26, 44 33 C44 38, 48 43, 51 47 L34 106 C45 110, 67 110, 78 106 L61 47 C64 43, 68 38, 68 33 C68 26, 63 20, 63 20 L59 27 L56 29 L53 27 Z"
+                fill="#8ca88b"
+              />
+              <path d="M47 47 Q56 50 65 47" stroke="#f8f7f3" stroke-width="1.3" />
+              <!-- Traje elegante -->
+              <path
+                d="M107 24 L117 20 L125 32 L133 20 L143 24 L152 60 L144 62 L141 44 L141 107 L127 107 L125 76 L123 107 L109 107 L109 44 L106 62 L98 60 Z"
+                fill="#769375"
+              />
+              <!-- Camisa y solapa -->
+              <path d="M117 20 L125 46 L133 20 Z" fill="#f8f7f3" />
+              <!-- Moño -->
+              <path d="M120 24 L125 26.5 L130 24 L130 29 L125 26.5 L120 29 Z" fill="#364a2b" />
+              <!-- Botones -->
+              <circle cx="125" cy="54" r="1.4" fill="#364a2b" />
+              <circle cx="125" cy="62" r="1.4" fill="#364a2b" />
+            </svg>
+          </div>
+
+          <p class="dresscode-card__style" id="dresscode-style">
+            ELEGANTE · GALA · ELEGANTE SPORT
+          </p>
+        </div>
+
+        <img
+          src="assets/eucalipto.jpg"
+          alt=""
+          class="botanical-sprig botanical-sprig--wide"
+          aria-hidden="true"
+        />
+
+        <!-- Paleta de colores reservados para la novia -->
+        <div class="reserved-colors-box">
+          <h3 class="reserved-colors__title" id="reserved-title">
+            Colores reservados para la novia
+          </h3>
+          <p class="reserved-colors__note" id="reserved-note">
+            Por favor, evitá vestir blanco y toda su gama de tonos claros para
+            que brillen únicamente en Lilén.
+          </p>
+          <div class="color-swatches" id="color-swatches"></div>
+        </div>
+      </section>
+
+      <!-- ==================== 6. FOTOS + QR A GOOGLE DRIVE ==================== -->
+      <section class="section section--paper photos-section reveal" id="fotos">
+        <h2 class="script-title photos-title" id="photos-title">Fotos</h2>
+
+        <!-- Ícono lineal cámara con corazón -->
+        <svg class="line-icon line-icon--camera" viewBox="0 0 80 68" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- Corazón en globo arriba -->
+          <path d="M46 10 C46 7, 49 5, 52 5 C54.5 5, 56 6.8, 56.5 8.2 C57 6.8, 58.5 5, 61 5 C64 5, 67 7, 67 10 C67 15.5, 56.5 22, 56.5 22 C56.5 22, 46 15.5, 46 10 Z" />
+          <!-- Cuerpo de cámara -->
+          <rect x="14" y="25" width="46" height="33" rx="5" />
+          <path d="M24 25 L28 19 L40 19 L44 25" />
+          <circle cx="37" cy="41.5" r="9.5" />
+          <circle cx="37" cy="41.5" r="4.5" />
+          <circle cx="52" cy="32" r="1.5" fill="currentColor" />
+        </svg>
+
+        <p class="photos-desc" id="photos-desc">
+          Compartí tus momentos con nosotros. Escaneá el código QR o tocá el
+          botón para subir tus fotos y videos de la fiesta a nuestro álbum.
+        </p>
+
+        <div class="qr-card">
+          <div id="qr-code" class="qr-box" aria-label="Código QR para subir fotos a Google Drive"></div>
+          <span class="qr-caption">Escaneá para subir tus fotos</span>
+        </div>
+
+        <a
+          id="photos-drive-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--olive"
+        >
+          SUBIR FOTOS AL DRIVE
+        </a>
+      </section>
+
+      <!-- ==================== 7. FOTO SECUNDARIA ==================== -->
+      <section class="couple-photo-section reveal" aria-label="Foto de Ignacio y Lilén">
+        <img
+          id="couple-img"
+          src="assets/foto-pareja.jpg"
+          alt="Ignacio y Lilén"
+          class="couple-photo"
+          loading="lazy"
+        />
+      </section>
+
+      <!-- ==================== 8. CIERRE / ¡TE ESPERAMOS! ==================== -->
+      <footer class="section section--sage footer-section reveal" id="cierre">
+        <!-- Marca de agua de anillos dorados entrelazados (guiño a su video Save the Date) -->
+        <svg class="rings-watermark" viewBox="0 0 240 140" fill="none" aria-hidden="true">
+          <circle cx="96" cy="74" r="42" stroke="#c6a95d" stroke-width="3" opacity="0.24" />
+          <circle cx="144" cy="74" r="42" stroke="#c6a95d" stroke-width="3" opacity="0.24" />
+          <path d="M138 30 L144 22 L150 30 L144 35 Z" stroke="#c6a95d" stroke-width="2" opacity="0.28" />
+        </svg>
+
+        <svg class="gold-heart-ornament" viewBox="0 0 200 44" fill="none" aria-hidden="true">
+          <path
+            d="M12 26 C42 26, 62 31, 86 24 C95 21, 97 13, 100 17 C103 13, 105 21, 114 24 C138 31, 158 26, 188 26"
+            stroke="#c6a95d"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M100 28 C100 28, 86 19, 86 11.5 C86 7.5, 89.2 4.5, 93 4.5 C96.2 4.5, 98.8 6.5, 100 9.2 C101.2 6.5, 103.8 4.5, 107 4.5 C110.8 4.5, 114 7.5, 114 11.5 C114 19, 100 28, 100 28 Z"
+            stroke="#c6a95d"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        <h2 class="serif-heading footer-heading">¡TE ESPERAMOS!</h2>
+        <p class="script-title footer-names" id="footer-names">Ignacio y Lilén</p>
+        <p class="footer-date" id="footer-date">20 · 03 · 2027</p>
+
+        <img
+          src="assets/eucalipto.jpg"
+          alt=""
+          class="botanical-sprig botanical-sprig--footer"
+          aria-hidden="true"
+        />
+      </footer>
+    </main>
+
+    <!-- ==================== MODAL: CONFIRMAR ASISTENCIA (RSVP) ==================== -->
+    <div class="modal-overlay" id="modal-rsvp" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-rsvp-title">
+      <div class="modal-card">
+        <button type="button" class="modal-close" data-close-modal aria-label="Cerrar">&times;</button>
+        <h3 class="script-title modal-title" id="modal-rsvp-title">Confirmar Asistencia</h3>
+        <p class="modal-subtitle">Completá tus datos para ayudarnos a organizar todo con mucho cariño.</p>
+
+        <form id="rsvp-form" class="rsvp-form" novalidate>
+          <div class="form-field">
+            <label for="rsvp-name">Nombre y Apellido *</label>
+            <input
+              type="text"
+              id="rsvp-name"
+              name="nombre"
+              required
+              placeholder="Ej. María González"
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>¿Confirmás tu asistencia? *</label>
+            <div class="radio-group">
+              <label class="radio-pill">
+                <input type="radio" name="asiste" value="Sí" checked />
+                <span>¡Sí, ahí estaré!</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="asiste" value="No" />
+                <span>No podré asistir</span>
+              </label>
+            </div>
+          </div>
+
+          <div id="rsvp-attending-fields">
+            <div class="form-field">
+              <label for="rsvp-guests">Cantidad de personas (incluyéndote)</label>
+              <select id="rsvp-guests" name="cantidad">
+                <option value="1">1 persona</option>
+                <option value="2">2 personas</option>
+                <option value="3">3 personas</option>
+                <option value="4">4 personas</option>
+                <option value="5">5 personas</option>
+                <option value="6">6 personas</option>
+              </select>
+            </div>
+
+            <div class="form-field" id="rsvp-companions-field" hidden>
+              <label for="rsvp-companions">Nombres de los acompañantes</label>
+              <input
+                type="text"
+                id="rsvp-companions"
+                name="acompanantes"
+                placeholder="Ej. Juan Pérez, Sofía Pérez"
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="rsvp-diet">Menú / Restricciones alimentarias</label>
+              <select id="rsvp-diet" name="menu">
+                <option value="Menú clásico (sin restricciones)">Menú clásico (sin restricciones)</option>
+                <option value="Vegetariano">Vegetariano</option>
+                <option value="Vegano">Vegano</option>
+                <option value="Celíaco / Sin TACC">Celíaco / Sin TACC</option>
+                <option value="Otra">Otra (aclarar en el mensaje)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="rsvp-song">¿Qué canción no puede faltar en la fiesta?</label>
+              <input
+                type="text"
+                id="rsvp-song"
+                name="cancion"
+                placeholder="Artista - Tema"
+              />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="rsvp-message">Mensaje o aclaración para los novios</label>
+            <textarea
+              id="rsvp-message"
+              name="mensaje"
+              rows="2"
+              placeholder="Dejanos un mensajito o aclaración..."
+            ></textarea>
+          </div>
+
+          <p class="form-feedback" id="rsvp-feedback" role="status" aria-live="polite"></p>
+
+          <button type="submit" class="btn btn--olive btn--full" id="rsvp-submit">
+            ENVIAR CONFIRMACIÓN
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL: DATOS BANCARIOS / ALIAS ==================== -->
+    <div class="modal-overlay" id="modal-gift" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-gift-title">
+      <div class="modal-card modal-card--centered">
+        <button type="button" class="modal-close" data-close-modal aria-label="Cerrar">&times;</button>
+        <h3 class="script-title modal-title" id="modal-gift-title">Datos Bancarios</h3>
+        <p class="modal-subtitle">
+          ¡Muchas gracias por acompañarnos en este momento tan especial!
+        </p>
+
+        <div class="bank-box">
+          <div class="bank-row">
+            <span class="bank-label">ALIAS</span>
+            <strong class="bank-value" id="gift-alias">A.DEFINIR.IGNA.LI</strong>
+            <button type="button" class="btn btn--olive btn--sm" id="btn-copy-alias">
+              COPIAR ALIAS
+            </button>
+          </div>
+
+          <div class="bank-row" id="gift-cbu-row" hidden>
+            <span class="bank-label">CBU / CVU</span>
+            <strong class="bank-value bank-value--mono" id="gift-cbu"></strong>
+            <button type="button" class="btn btn--outline btn--sm" id="btn-copy-cbu">
+              COPIAR CBU
+            </button>
+          </div>
+
+          <div class="bank-meta" id="gift-meta"></div>
+        </div>
+
+        <p class="bank-note" id="gift-note" hidden></p>
+      </div>
+    </div>
+
+    <!-- Toast de notificaciones -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Librería liviana para generar QR en SVG real (100% client-side) -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

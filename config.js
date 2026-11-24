@@ -48,9 +48,8 @@ window.WEDDING_CONFIG = {
   rsvp: {
     deadlineText:
       "Nos encantaría contar con tu presencia. Por favor, confirmá tu asistencia antes del 20 de Febrero de 2027.",
-    // Pegá aquí la URL del Web App de Google Apps Script (ver README.md)
-    // Ejemplo: "https://script.google.com/macros/s/AKfycb.../exec"
-    googleScriptUrl: "",
+    // URL del Web App de Google Apps Script conectado a tu Google Sheet
+    googleScriptUrl: "https://script.google.com/macros/s/AKfycbyYFCSKLBCoQ0XuFrfe8sFk3r15st3q2Ziy03cRiYKLSfDsfcXS8bodufgcH1KVhdRyhA/exec",
     // Opcional: si querés un respaldo por WhatsApp (formato internacional sin +, ej. "5493581234567")
     whatsappFallback: ""
   },
